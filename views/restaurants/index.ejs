@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate')%>
+
+<h1>All Restaurants</h1>
+<br>
+<% for (let [i,restaurant] of restaurants.entries()){%>
+<div class="card mb-3">
+    <div class="row">
+        <div class="col-md-4">
+            <%if(restaurant.images.length) {%>
+                <img class="img-fluid" alt="" src="<%=restaurant.images[0].url%>">
+                <% }else {%>
+                <img class="img-fluid" alt=""
+                    src="https://res.cloudinary.com/mycloud04/image/upload/v1610973386/ZeroMile/8_ya3jlr.jpg">
+                <% } %>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"><%= restaurant.title %> </h5>
+                <p class="card-text"><%= restaurant.description %></p>
+                <p class="card-text">Rating⭐ : <%= ratings[i] %>/5  </p>
+                <p class="card-text">
+                    <small class="text-muted"><%= restaurant.location%></small>
+                </p>
+                
+                <a class="btn btn-primary" href="/restaurants/<%=restaurant._id%>">View <%=restaurant.title%></a>
+            </div>
+        </div>
+    </div>
+</div>
+<% }%>

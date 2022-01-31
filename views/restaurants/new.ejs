@@ -1,0 +1,63 @@
+<% layout('layouts/boilerplate') %> 
+<div class="row">
+    <h1 class="text-center">New Restaurant</h1>
+    <div class="col-6 offset-3">
+        <form action="/restaurants" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+            <br>
+            <div class="mb-3">
+                <label class="form-label" for="title">Title :</label>
+                <input class="form-control" type="text" id="title" name="restaurant[title]" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location :</label>
+                <input class="form-control" type="text" id="location" name="restaurant[location]" required>
+            </div>
+             <!-- <div class="mb-3">
+                <label class="form-label" for="image">Image Url</label>
+                <input class="form-control" type="text" id="image" name="campground[image]" required>
+            </div> -->
+            <!-- <input type="file" name="image" multiple> -->
+            <div class="mb-3">
+                <label class="form-label" for="inputGroupFile01">Upload Image(s) :</label>
+                <input type="file" class="form-control" id="inputGroupFile01" name="image" multiple>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Approx Price (For two people) :</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">₹</span>
+                    <input type="text" class="form-control" placeholder="0.00" aria-describedby="price-label" name="restaurant[price]" required>
+                </div>
+            </div>
+            
+            <div>
+                <label class="form-label" for="availability">Availability :</label>
+            </div>
+            <div class="form-check form-check-inline mb-3">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Dining" name="availibility[Dining]">
+                <label class="form-check-label" for="inlineCheckbox1">Dining</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Zomato" name="availibility[Zomato]">
+                <label class="form-check-label" for="inlineCheckbox2">Zomato</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Swiggy" name="availibility[Swiggy]">
+                <label class="form-check-label" for="inlineCheckbox3">Swiggy</label>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="description">Description :</label>
+                <textarea class="form-control" type="text" id="description" name="restaurant[description]" required></textarea>
+            </div>
+            
+            <div class="mb-3 mt-1">
+                <button class="btn btn-success me-3">Add Restaurant</button>
+                <a class="btn btn-danger" href="/restaurants">Cancel</a>
+                
+            </div>
+            
+            
+        </form>
+    </div>
+</div>
+
